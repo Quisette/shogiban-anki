@@ -1,0 +1,16 @@
+
+{
+    "package": "shogiban-anki",
+    "name":"shogiban-anki",
+    "version":"1.0.1-alpha",
+    "ankiweb_id": "",
+    "author": "Quisette",
+    "contact": "https://github.com/Quisette",
+    "homepage": "https://github.com/Quisette/shogiban-anki",
+    "copyright_start": 2022,
+    "conflicts": [""],
+    "targets": [
+        "anki21"
+    ]
+    
+}

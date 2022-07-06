@@ -20,7 +20,7 @@ from anki.cards import Card
 from aqt.utils import showInfo
 
 BOARD_SIZE = 150
-__version__ = '1.0.0'
+__version__ = '1.0.1-alpha'
 
 FenData = namedtuple(
     'FenData',
@@ -146,10 +146,13 @@ def insert_table(fen_match):
                 head += u" class=\"press\" "
             head += u">"
             p = head + u"{0}</td>".format(p)
+            if promoteflag[itr] is True:
+                p = p.replace(u"def", u"def promote")
             if revflag[itr] is True:
                 p = p.replace(u"def", u"rev")
             tr += p
             itr += 1
+            
         trows.append(tr + u'</tr>\n')
 
     sente_mochi, gote_mochi = get_mochi(spacesplit[2])
@@ -269,8 +272,8 @@ def insert_kif_table(txt):
 
 
 def show_error_message(output):
-    comment = "<h2>error occured when rendering (shogi_visualizer addon by tokoharu).</h2>"
-    comment += "<pre>please submit message to issue at github (https://github.com/tokoharu/shogi_addon_for_Anki/issues)</pre>"
+    comment = "<h2>Error occured when rendering (shogiban-anki by Quisette).</h2>"
+    comment += "<pre>Please submit your error message to the github page to get more information.</pre>"
 
     message1 = comment
 
