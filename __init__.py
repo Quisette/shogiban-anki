@@ -122,7 +122,7 @@ def insert_table(fen_match):
         return fen_match.group(0)
     rows = fen.placement.split('/')
     active = u'.'
-    if fen.active == "b":
+    if (int(fen.count) % 2) == 1:
         active = u"先手番です"
     else:
         active = u"後手番です"
